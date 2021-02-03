@@ -15,5 +15,10 @@ PD: The tutorial also has a [text version][2] in Tim's website.
 2. Installation of tensorflow and keras.
 3. Import.
 
-# 2. Linear Regression pt. 1
+# 2. Linear Regression
 
+See file: `code/01.ipynb`
+
+# 3. Saving Models and Plotting Data
+
+See file: `code/01.ipynb` (search for the title)
