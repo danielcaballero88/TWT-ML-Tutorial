@@ -95,3 +95,15 @@ every feature.
 Still it's not as much costly as other clustering alogirthms.
 
 [8]: https://youtu.be/g1Zbuk1gAfk
+
+
+# Tensorflow 2.0 Tutorial
+
+[Text-based tutorial in Tim's website][9]
+
+[9]: https://www.techwithtim.net/tutorials/python-neural-networks/
+
+[Youtube list of videos][10]
+
+[10]: https://youtube.com/playlist?list=PLzMcBGfZo4-lak7tiFDec5_ZMItiIIfmj
+
