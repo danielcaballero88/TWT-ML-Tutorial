@@ -57,5 +57,41 @@ SVM creates a hyperplane to divide the data.
 To check out the math see [Tim's video on SVM][5], specially to understand
 about kernels to increase the number of features when the data isn't capable
 to be separated by a hyperplane.
+This [video][6] is another nice resource to visualize the application of
+kernels to increase the number of dimensions to make it possible to separate
+the data with a hyper-plane.
+I guess it's equivalent to increasing the complexity of the separation geometry
+from a hyper-plane to something else, like a hyper-circle (if that is a thing).
+
+From a [quora question][7]:
+**What are kernels?**
+A kernel is a similarity function.
+It is a function that you, as the domain expert,
+provide to a machine learning algorithm.
+It takes two inputs and spits out how similar they are.
 
 [5]: https://youtu.be/JHxyrMgOUWI
+[6]: https://youtu.be/3liCbRZPrZA
+[7]: https://www.quora.com/What-are-kernels-in-machine-learning-and-SVM-and-why-do-we-need-them
+
+## 6. K-means Clustering
+
+This is our first unsupervised learning algorithm:
+we don't have to feed the labels for the data (train or test).
+
+Previously we gave the features and the output, the models just had to find
+the correct function to predict a new output given its features.
+
+Now we only have outputs, the features have to be determined by the model too.
+
+<K> is the number of clusters.
+
+The math is explained in [Tim's video][8] and maybe in other places as well.
+
+It is a quite heavy algorithm regarding the computational cost,
+because it needs to compute the distance between the cluster centroids and
+the data points for every cluster, and every point, and every iteration, and
+every feature.
+Still it's not as much costly as other clustering alogirthms.
+
+[8]: https://youtu.be/g1Zbuk1gAfk
