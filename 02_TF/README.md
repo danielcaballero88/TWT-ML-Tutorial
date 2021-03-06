@@ -65,3 +65,24 @@ This is a function that calculates the error between the actual output and the
 expected output.
 
 Is there always an expected output? That is a good question.
+
+## 2. Loading & Looking at Data
+
+[Second video from Tim in this Tutorial](https://youtu.be/wu9IH1Xvdd4).
+
+This example uses a [dataset that is included in *Keras*][1], which is some
+wrapper of TensorFlow, or framework that uses TensorFlor, or something like that.
+The video also follows the [TensorFlow tutorial][2] but adding some more stuff
+(or so says Tim).
+
+[1]:(https://keras.io/api/datasets/)
+[2]:(https://www.tensorflow.org/tutorials/keras/classification)
+
+I follow this tutorial in the file `./code/01.py`.
+I decided to stop using notebooks because it doesn't run as smoothly,
+although I'll try to convert the python code to a notebook at the end to print
+a nice html of the tutorial.
+
+This example loads the dataset, takes an already done split in train and test
+data, and visualizes the data (images).
+Take a look by running the script.
