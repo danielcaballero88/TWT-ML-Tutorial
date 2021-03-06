@@ -70,6 +70,17 @@ It is a function that you, as the domain expert,
 provide to a machine learning algorithm.
 It takes two inputs and spits out how similar they are.
 
+**But**: I think that what it actually does is to make some calculation with
+the values and then that is added as a new dimension.  
+*What for?* It's because since we want to split the data with a hyper-plane, 
+then if the data is actually separated by a hyper-curve (or whatever), then 
+this is a workaround.  
+*For example:* To split the data with a circle (inside vs outside) we can use
+as a kernel a function (x^2 + y^2), then add that as a third dimension (z) and 
+split the data with a plane parallel to the xy plane in z=z0.  
+Think about that, it is exactly as splitting the data with a circle.
+
+
 [5]: https://youtu.be/JHxyrMgOUWI
 [6]: https://youtu.be/3liCbRZPrZA
 [7]: https://www.quora.com/What-are-kernels-in-machine-learning-and-SVM-and-why-do-we-need-them
