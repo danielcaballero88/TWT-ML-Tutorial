@@ -78,7 +78,7 @@ The video also follows the [TensorFlow tutorial][2] but adding some more stuff
 [1]:(https://keras.io/api/datasets/)
 [2]:(https://www.tensorflow.org/tutorials/keras/classification)
 
-I follow this tutorial in the file `./code/01.py`.
+I follow this tutorial in the file `./code/02.py`.
 I decided to stop using notebooks because it doesn't run as smoothly,
 although I'll try to convert the python code to a notebook at the end to print
 a nice html of the tutorial.
