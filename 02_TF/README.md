@@ -86,3 +86,28 @@ a nice html of the tutorial.
 This example loads the dataset, takes an already done split in train and test
 data, and visualizes the data (images).
 Take a look by running the script.
+
+## 3. Creating a Model
+
+We continue with the image selection model.
+See file `code/03.py`
+
+Our **input** data is an image (well a bunch of images).
+Each image comes as a 28x28 matrix (our input data).
+This doesn't work yet for a neural network, we need to *flatten* the data,
+so we can pass each value to a neuron.
+Then we get an array of 28*28=784, and that is our input to our NN: so we have
+784 neurons.
+
+Our **output** layer won't be a single neuron, but 10 neurons, each one
+representing one of the 10 classes.
+Each one of these neurons is going to have a value, which is going to represent
+how much the NN believes that the image belongs to that class.
+
+Although we could do with just two layers, that wouldn't be of much use.
+We need to add **hidden layers**.
+We can choose how many neurons will have our hidden layer: we can work with
+percentages from our input layer, but in this case we're just going to do with
+128 neurons.
+And we will do a *full connection*: every input neuron with every middle neuron,
+and again between middle and output neurons.
