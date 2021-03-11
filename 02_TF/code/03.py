@@ -7,6 +7,7 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 from matplotlib import pyplot as plt
+import os
 
 # Load keras dataset
 data = keras.datasets.fashion_mnist
@@ -43,9 +44,14 @@ model.compile(
 model.fit(
     train_images,
     train_labels,
-    epochs=10 # epochs state how many times the model is going to see tha train information
+    epochs=1 # epochs state how many times the model is going to see tha train information
 )
 
 # Evaluate the model on the test data
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Tested Acc: ", test_acc)
+
+# Save the model
+here = os.path.dirname(__file__)
+dumpfile = os.path.join(here, "03_keras_model")
+model.save(dumpfile)

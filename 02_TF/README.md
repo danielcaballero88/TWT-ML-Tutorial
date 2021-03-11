@@ -89,6 +89,8 @@ Take a look by running the script.
 
 ## 3. Creating a Model
 
+[Link to the YouTube Video](https://youtu.be/cvNtZqphr6A)
+
 We continue with the image selection model.
 See file `code/03.py`
 
@@ -111,3 +113,12 @@ percentages from our input layer, but in this case we're just going to do with
 128 neurons.
 And we will do a *full connection*: every input neuron with every middle neuron,
 and again between middle and output neurons.
+
+## 4. Using the Model to Make Predictions
+
+[Link to the YouTube Video](https://youtu.be/RqLD1INA_cQ)
+
+Code in `code/04.py`
+
+For the moment we're retraining the model each time that we are using it, but
+it could be better to save it.
