@@ -66,7 +66,9 @@ expected output.
 
 Is there always an expected output? That is a good question.
 
-## 2. Loading & Looking at Data
+## First Steps
+
+### Video 2. Loading & Looking at Data
 
 [Second video from Tim in this Tutorial](https://youtu.be/wu9IH1Xvdd4).
 
@@ -87,7 +89,7 @@ This example loads the dataset, takes an already done split in train and test
 data, and visualizes the data (images).
 Take a look by running the script.
 
-## 3. Creating a Model
+### Video 3. Creating a Model
 
 [Link to the YouTube Video](https://youtu.be/cvNtZqphr6A)
 
@@ -114,11 +116,80 @@ percentages from our input layer, but in this case we're just going to do with
 And we will do a *full connection*: every input neuron with every middle neuron,
 and again between middle and output neurons.
 
-## 4. Using the Model to Make Predictions
+### Video 4. Using the Model to Make Predictions
 
 [Link to the YouTube Video](https://youtu.be/RqLD1INA_cQ)
 
 Code in `code/04.py`
 
 For the moment we're retraining the model each time that we are using it, but
-it could be better to save it.
+it could be better to save it. So what I did was to look up in Keras docs how to
+save the model and did that in `03.py`, then in `04.py` I just load the saved
+model and that saves a bunch of time when testing.
+
+Then in `04.py` we use the model to make predictions and it is beautiful!
+
+## Text Classification
+
+### Get the data
+
+File: `05.py`
+
+[Link to the YouTube Video](https://youtu.be/k-_pWoy2fb4)
+
+Tim follows [TensorFlow 2.0 tutorial on text classification][3] for this,
+at least at first, and then continues in a different direction.
+
+[3]:https://www.tensorflow.org/tutorials/keras/text_classification
+
+We'll still keep using Keras data, which is easier and nicer. But it is relevant
+to know that in real life data is difficult at first, it needs cleaning, a lot!
+
+At the end of the video Tim set's the model but I leave that to the next section
+and file.
+
+### Arquitecture of the model
+
+File: `05.py`
+
+[Link to the YouTube Video](https://youtu.be/qpb_39IjZA0)
+
+Let's talk a bit about the arquitecture of the network, because it has some new
+stuff.
+
+Let's see two strings and their integer mappings:
+
+```
+s1 = have a great day -> [0, 1, 2, 3]
+s2 = have a good day -> [0, 1, 4, 3]
+```
+
+Although we know these strings are very similar, the computer only sees
+different numbers in the position 3. And that could mean anything at first.
+
+Something that is done is to create ***word vectors***, with each word being
+represented by a vector of dimension 16 (I think).
+So instead of having a string being a list of integers, it will actually be a
+list of vectors, and then we can compute the distances,o rientations, etc,
+of the vectors.
+Also, the *context* matters, because the words that are close can affect the
+vector of a word, making it change its meaning: `'very good' ~ 'great' > 'good'`
+
+So that is ***embedding*** (first layer of the NN): taking the list ofintegers and parsing that to a
+list of vectors, to represent the list of words that is the original text.
+Then we take the average in our next layer: shrink the vectors down by
+averaging their data.
+Then we use a dense layer of 16 neurons (that is what the tutorial uses but it
+is possible to play around with that value).
+And finally that is connected to one output to get a value and pass it to a
+sigmoid function to get a value between 0 and 1 to decide if it is a good or bad
+review.
+
+So:
+0. Input
+1. Embedding
+2. Average
+3. Dense
+4. Output
+
+![Neural network for text classification](./images/nn-text-01.png)
